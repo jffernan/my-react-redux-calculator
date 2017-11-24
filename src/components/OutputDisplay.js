@@ -6,7 +6,7 @@ const OutputDisplay = (props) =>
   </div>
 
 OutputDisplay.defaultProps = {
-  output: 0
+  output: '0'
 };
 
 export default OutputDisplay;

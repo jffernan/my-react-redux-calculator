@@ -8,12 +8,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      output: 0
+      output: ''
     };
   }
 
   handleClick = (name) => {
-    this.setState( { output: name } );
+    this.setState( { output: this.state.output+name } );
   }
 
   handleChange = (event) => {
@@ -27,6 +27,11 @@ class App extends Component {
   }
 
   render() {
+    let output;
+    if (this.state.output) {
+      output=this.state.output
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -34,7 +39,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           <OutputDisplay
-            output={this.state.output}
+            output={ output }
           />
           <OutputForm
             handleSubmit={this.handleSubmit}
