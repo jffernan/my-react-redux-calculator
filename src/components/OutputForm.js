@@ -10,7 +10,7 @@ const OutputForm = (props) =>
         value={props.output}
         id="output"
         onChange={props.handleChange}
-        placeholder='0'
+        placeholder='ENTER'
       />
     </form>
   </div>
