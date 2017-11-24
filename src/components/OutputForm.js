@@ -3,14 +3,16 @@ import React from 'react';
 
 const OutputForm = (props) =>
   <div className="outputDisplay">
-    <form
-      //onSubmit={props.total}
-      type="number"
-      name="value"
-      value={props.value}
-      //onChange={props.handleChange}
-      id="value">
+    <form>
+      <input
+        type="number"
+        name="value"
+        value={props.value}
+        id="value"
+      />
     </form>
   </div>
 
 export default OutputForm;
+//onSubmit={props.total}
+//onChange={props.handleChange}

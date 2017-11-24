@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Buttons from './Buttons';
-import OutputForm from './OutputForm';
+import Buttons from './components/Buttons';
+import OutputForm from './components/OutputForm';
 
 class App extends Component {
   render() {

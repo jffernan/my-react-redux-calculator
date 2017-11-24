@@ -20,7 +20,7 @@ const Buttons = () => {
         </button>
         <button className = "nine">9
         </button>
-        <button className = "multiply">/X
+        <button className = "multiply">x
         </button>
       </div>
       <div className = "row3" >
