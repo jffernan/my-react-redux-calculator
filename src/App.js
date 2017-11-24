@@ -5,6 +5,17 @@ import OutputForm from './components/OutputForm';
 import OutputDisplay from './components/OutputDisplay';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      output: 0
+    };
+  }
+
+  handleClick = (name) => {
+    this.setState( { output: name } );
+  }
+
   render() {
     return (
       <div className="App">
@@ -12,9 +23,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to My React Redux Calculator</h1>
         </header>
         <p className="App-intro">
-          <OutputDisplay/>
+          <OutputDisplay
+            output={this.state.output}
+          />
           <OutputForm/>
-          <Buttons/>
+          <Buttons
+            clickHandler = {this.handleClick}
+          />
         </p>
       </div>
     );
