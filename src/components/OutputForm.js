@@ -6,13 +6,13 @@ const OutputForm = (props) =>
     <form>
       <input
         type="number"
-        name="value"
-        value={props.value}
-        id="value"
+        name="output"
+        value={props.output}
+        id="output"
       />
     </form>
   </div>
 
 export default OutputForm;
-//onSubmit={props.total}
+//onSubmit={props.output}
 //onChange={props.handleChange}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Buttons from './components/Buttons';
 import OutputForm from './components/OutputForm';
+import OutputDisplay from './components/OutputDisplay';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to My React Redux Calculator</h1>
         </header>
         <p className="App-intro">
+          <OutputDisplay/>
           <OutputForm/>
           <Buttons/>
         </p>
