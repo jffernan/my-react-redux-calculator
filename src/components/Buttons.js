@@ -50,7 +50,7 @@ const Buttons = () => {
         </button>
         <button className = "equals">=
         </button>
-        <button className = "enter">Enter
+        <button className = "enter">ENTER
         </button>
       </div>
     </div>

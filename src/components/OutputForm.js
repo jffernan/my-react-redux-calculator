@@ -2,7 +2,7 @@ import React from 'react';
 //import { Button, ControlLabel, Form, FormControl, FormGroup } from 'react-bootstrap';
 
 const OutputForm = (props) =>
-  <div className="outputDisplay">
+  <div className="outputForm">
     <form>
       <input
         type="number"
