@@ -16,6 +16,16 @@ class App extends Component {
     this.setState( { output: name } );
   }
 
+  handleChange = (event) => {
+    this.setState({
+      output: event.target.value
+    });
+  }
+
+  handleSubmit = (output) => {
+    this.setState( { output: output } );
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,7 +36,11 @@ class App extends Component {
           <OutputDisplay
             output={this.state.output}
           />
-          <OutputForm/>
+          <OutputForm
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            output={this.state.output}
+          />
           <Buttons
             clickHandler = {this.handleClick}
           />
