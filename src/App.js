@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-//import Buttons from './components/Buttons';
+import Button from './components/Button';
 import OutputForm from './components/OutputForm';
 import OutputDisplay from './components/OutputDisplay';
 import { connect } from 'react-redux';
 import {
-	  enterNumber
-	, setOperator
-	, percentage
-	, clear
-	, evaluate
-	, toggleNegative
-} from './actions';
+	  enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+} from './components/actions';
+import { operators } from './components/reducers';
 
 export class App extends Component {
   render() {
@@ -70,7 +66,7 @@ export class App extends Component {
           <OutputForm
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
-            output={this.state.output}
+            output={this.props.output}
           />
 					<div className = "buttons" >
 						<div className = "row" >

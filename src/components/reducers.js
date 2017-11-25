@@ -4,14 +4,14 @@ let initialState = {
   previousValue: 0
 };
 
-const operators = {
+export const operators = {
   ADD: "ADD",
   DIVIDE: "DIVIDE",
   MULTIPLY: "MULTIPLY",
   SUBTRACT: "SUBTRACT"
 };
 
-function calculate( output, previousValue, operator ) {
+export function calculate( output, previousValue, operator ) {
   switch ( operator ) {
     case operators.ADD:
       return previousValue + output;

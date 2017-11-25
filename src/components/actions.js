@@ -1,37 +1,37 @@
 export function clear() {
 	return {
-    type: CLEAR
+    type: "CLEAR"
   };
 }
 
 export function enterNumber( number ) {
 	return {
     number: number,
-    type: ENTER_NUMBER
+    type: "ENTER_NUMBER"
   };
 }
 
 export function evaluate() {
 	return {
-    type: EVALUATE
+    type: "EVALUATE"
   };
 }
 
 export function percentage() {
 	return {
-    type: PERCENTAGE
+    type: "PERCENTAGE"
   };
 }
 
 export function setOperator( operator ) {
 	return {
     operator: operator,
-    type: SET_OPERATOR
+    type: "SET_OPERATOR"
   };
 }
 
 export function toggleNegative() {
 	return {
-    type: TOGGLE_NEGATIVE
+    type: "TOGGLE_NEGATIVE"
   };
 }
