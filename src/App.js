@@ -37,7 +37,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to My React Redux Calculator</h1>
         </header>
-        <div className="App-intro">
+        <fieldset className="App-intro">
+          <legend>CALCULATOR</legend>
           <OutputDisplay
             output={ output }
           />
@@ -49,7 +50,7 @@ class App extends Component {
           <Buttons
             clickHandler = {this.handleClick}
           />
-        </div>
+        </fieldset>
       </div>
     );
   }
