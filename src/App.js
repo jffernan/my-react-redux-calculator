@@ -1,36 +1,61 @@
 import React, { Component } from 'react';
 import './App.css';
-import Buttons from './components/Buttons';
+//import Buttons from './components/Buttons';
 import OutputForm from './components/OutputForm';
 import OutputDisplay from './components/OutputDisplay';
+import { connect } from 'react-redux';
+import {
+	  enterNumber
+	, setOperator
+	, percentage
+	, clear
+	, evaluate
+	, toggleNegative
+} from './actions';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      output: ''
-    };
-  }
-
-  handleClick = (name) => {
-    this.setState( { output: this.state.output+name } );
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      output: event.target.value
-    });
-  }
-
-  handleSubmit = (output) => {
-    this.setState( { output: output } );
-  }
-
+export class App extends Component {
   render() {
-    let output;
-    if (this.state.output) {
-      output=this.state.output
-    }
+    const {
+			  output
+			, enterNumber
+			, setOperator
+			, percentage
+			, clear
+			, evaluate
+			, toggleNegative
+		} = this.props;
+
+		const numberButtons789 = [ 7, 8, 9].map( ( number ) => (
+			<Button
+				callback={ () => enterNumber( number ) }
+				key={ number }
+				value={ number }
+			/>
+		) );
+
+		const numberButtons456 = [ 4, 5, 6 ].map( ( number ) => (
+			<Button
+				callback={ () => enterNumber( number ) }
+				key={ number }
+				value={ number }
+			/>
+		) );
+
+		const numberButtons123 = [ 1, 2, 3 ].map( ( number ) => (
+			<Button
+				callback={ () => enterNumber( number ) }
+				key={ number }
+				value={ number }
+			/>
+		) );
+
+		const numberButtons0 = [0].map( ( number ) => (
+			<Button
+				callback={ () => enterNumber( number ) }
+				key={ number }
+				value={ number }
+			/>
+		) );
 
     return (
       <div className="App">
@@ -47,13 +72,78 @@ class App extends Component {
             handleChange={this.handleChange}
             output={this.state.output}
           />
-          <Buttons
-            clickHandler = {this.handleClick}
-          />
+					<div className = "buttons" >
+						<div className = "row" >
+							<Button
+								callback={ clear }
+								value="AC"
+							/>
+							<Button
+								callback={ toggleNegative }
+								value="+/-"
+							/>
+							<Button
+								callback={ percentage }
+								value="%"
+							/>
+							<Button
+								callback={ () => setOperator( operators.DIVIDE ) }
+								value="÷"
+							/>
+						</div>
+						<div className = "row" >
+							{ numberButtons789 }
+							<Button
+								callback={ () => setOperator( operators.MULTIPLY ) }
+								value="×"
+							/>
+						</div>
+						<div className = "row" >
+							{ numberButtons456 }
+							<Button
+								callback={ () => setOperator( operators.SUBTRACT ) }
+								value="-"
+							/>
+						</div>
+						<div className = "row" >
+							{ numberButtons123 }
+							<Button
+								callback={ () => setOperator( operators.ADD ) }
+								value="+"
+							/>
+						</div>
+						<div className = "row" >
+							{ numberButtons0 }
+							<Button
+								callback={ () => enterNumber( "." ) }
+								value="."
+							/>
+							<Button
+								callback={ evaluate }
+								value="="
+							/>
+							<Button
+								callback={ evaluate }
+								value="ENTER"
+							/>
+							</div>
+					</div>
         </fieldset>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return state;
+}
+
+export default connect(mapStateToProps, {
+	  enterNumber
+	, setOperator
+	, percentage
+	, clear
+	, evaluate
+	, toggleNegative
+	}
+)(App);

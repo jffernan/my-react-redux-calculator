@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import Button from './Button';
 
 class Buttons extends Component {
@@ -45,3 +45,4 @@ class Buttons extends Component {
 }
 
 export default Buttons;
+*/

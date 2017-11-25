@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Button = (props) => {
+const Button = ({callback, value}) => {
   return (
     <div className="button">
       <button
-        onClick={props.clickHandler.bind(this, props.name)}>
-        {props.name}
+        onClick={ callback }>
+        {value}
       </button>
     </div>
   )
