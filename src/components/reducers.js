@@ -31,12 +31,12 @@ const mainReducer = (state = initialState, action) => {
     case 'ENTER_NUMBER':
     return {
       ...state,
-      output: state.output === "0" ? action.number.toString() : `${ action.number }`
+      output: state.output === "0" ? action.number.toString() : `${ state.output }${ action.number }`
     };
 
     case 'SET_OPERATOR':
       return {
-        output: `${ state.output }`,
+        output: "0",
         operator: action.operator,
         previousValue: state.operator ? calculate( parseFloat( state.output ), state.previousValue, state.operator ) : parseFloat( state.output )
       };
