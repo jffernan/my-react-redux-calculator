@@ -10,14 +10,7 @@ import { operators } from './components/reducers';
 
 export class App extends Component {
   render() {
-    const {
-			  output
-			, enterNumber
-			, setOperator
-			, percentage
-			, clear
-			, evaluate
-			, toggleNegative
+    const {output, enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
 		} = this.props;
 
 		const numberButtons789 = [ 7, 8, 9].map( ( number ) => (
@@ -129,11 +122,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-	  enterNumber
-	, setOperator
-	, percentage
-	, clear
-	, evaluate
-	, toggleNegative
-	}
-)(App);
+	enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+})(App);

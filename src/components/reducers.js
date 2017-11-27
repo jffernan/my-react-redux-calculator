@@ -11,7 +11,7 @@ export const operators = {
   SUBTRACT: "SUBTRACT"
 };
 
-export function calculate( output, previousValue, operator ) {
+export const calculate = ( output, previousValue, operator ) => {
   switch ( operator ) {
     case operators.ADD:
       return previousValue + output;
@@ -24,9 +24,9 @@ export function calculate( output, previousValue, operator ) {
     default:
       return output;
   }
-}
+};
 
-export default function mainReducer(state = initialState, action) {
+const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ENTER_NUMBER':
     return {
@@ -71,3 +71,5 @@ export default function mainReducer(state = initialState, action) {
       return state;
   }
 };
+
+export default mainReducer;

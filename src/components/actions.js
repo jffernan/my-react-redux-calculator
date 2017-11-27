@@ -1,36 +1,36 @@
-export function clear() {
+export const clear = () => {
 	return {
     type: "CLEAR"
   };
 }
 
-export function enterNumber( number ) {
+export const enterNumber = ( number ) => {
 	return {
     number: number,
     type: "ENTER_NUMBER"
   };
 }
 
-export function evaluate() {
+export const evaluate = () => {
 	return {
     type: "EVALUATE"
   };
 }
 
-export function percentage() {
+export const percentage = () => {
 	return {
     type: "PERCENTAGE"
   };
 }
 
-export function setOperator( operator ) {
+export const setOperator = ( operator ) => {
 	return {
     operator: operator,
     type: "SET_OPERATOR"
   };
 }
 
-export function toggleNegative() {
+export const toggleNegative = () => {
 	return {
     type: "TOGGLE_NEGATIVE"
   };
