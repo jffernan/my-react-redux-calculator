@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Button from './components/Button';
-import OutputForm from './components/OutputForm';
 import OutputDisplay from './components/OutputDisplay';
 import { connect } from 'react-redux';
 import {
@@ -63,16 +62,11 @@ export class App extends Component {
           <OutputDisplay
             output={ output }
           />
-          <OutputForm
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-            output={this.props.output}
-          />
 					<div className = "buttons" >
 						<div className = "row" >
 							<Button
 								callback={ clear }
-								value="AC"
+								value="clear"
 							/>
 							<Button
 								callback={ toggleNegative }
@@ -120,7 +114,7 @@ export class App extends Component {
 							/>
 							<Button
 								callback={ evaluate }
-								value="ENTER"
+								value="enter"
 							/>
 							</div>
 					</div>

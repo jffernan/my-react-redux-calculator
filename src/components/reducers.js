@@ -30,44 +30,44 @@ export default function mainReducer(state = initialState, action) {
   switch (action.type) {
     case 'ENTER_NUMBER':
     return {
-        ...state
-      , output: state.output === "0" ? action.number.toString() : `${ state.output }${ action.number }`
+      ...state,
+      output: state.output === "0" ? action.number.toString() : `${ action.number }`
     };
 
     case 'SET_OPERATOR':
       return {
-          output: "0"
-        , operator: action.operator
-        , previousValue: state.operator ? calculate( parseFloat( state.output ), state.previousValue, state.operator ) : parseFloat( state.output )
+        output: `${ state.output }`,
+        operator: action.operator,
+        previousValue: state.operator ? calculate( parseFloat( state.output ), state.previousValue, state.operator ) : parseFloat( state.output )
       };
 
     case 'PERCENTAGE':
       return {
-          ...state
-        , output: ( parseFloat( state.output ) / 100 ).toString()
+        ...state,
+        output: ( parseFloat( state.output ) / 100 ).toString()
       };
 
     case 'CLEAR':
       return {
-          output: "0"
-        , operator: null
-        , previousValue: 0
+        output: "0",
+        operator: null,
+        previousValue: 0
       };
 
     case 'EVALUATE':
       return {
-          output: calculate( parseFloat( state.output ), state.previousValue, state.operator ).toString()
-        , operator: null
-        , previousValue: 0
+        output: calculate( parseFloat( state.output ), state.previousValue, state.operator ).toString(),
+        operator: null,
+        previousValue: 0
       };
 
     case 'TOGGLE_NEGATIVE':
       return {
-          ...state
-        , output: ( -parseFloat( state.output ) ).toString()
+        ...state,
+        output: ( -parseFloat( state.output ) ).toString()
       };
 
     default:
       return state;
   }
-}
+};

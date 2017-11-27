@@ -5,8 +5,4 @@ const OutputDisplay = (props) =>
     {props.output}
   </div>
 
-OutputDisplay.defaultProps = {
-  output: '0'
-};
-
 export default OutputDisplay;
