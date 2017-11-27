@@ -98,7 +98,7 @@ export class App extends Component {
 						<div className = "row" >
 							{ numberButtons0 }
 							<Button
-								callback={ () => enterNumber( "0." ) }
+								callback={ () => enterNumber( output === "0"?"0.":"." ) }
 								value="."
 							/>
 							<Button
