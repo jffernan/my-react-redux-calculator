@@ -2,8 +2,6 @@
 
 Welcome to My React Redux Calculator SPA, where you can perform basic math operations in the UI.
 
-Video demo at: 
-
 The app was created with create-react-app.  See the [full create-react-app guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).  Thank you for using my app.
 
 ## Installation
