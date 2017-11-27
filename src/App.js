@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import {
 	  enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
 } from './components/actions';
-import { operators } from './components/reducers';
+import { operators } from './components/constants';
 
 export class App extends Component {
   render() {

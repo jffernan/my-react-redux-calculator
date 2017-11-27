@@ -1,37 +1,46 @@
+import {
+	CLEAR,
+	ENTER_NUMBER,
+	EVALUATE,
+	PERCENTAGE,
+	SET_OPERATOR,
+	TOGGLE_NEGATIVE
+} from './constants.js';
+
 export const clear = () => {
 	return {
-    type: "CLEAR"
+    type: CLEAR
   };
 }
 
-export const enterNumber = ( number ) => {
+export const enterNumber = number => {
 	return {
-    number: number,
-    type: "ENTER_NUMBER"
+    type: ENTER_NUMBER,
+		number
   };
 }
 
 export const evaluate = () => {
 	return {
-    type: "EVALUATE"
+    type: EVALUATE
   };
 }
 
 export const percentage = () => {
 	return {
-    type: "PERCENTAGE"
+    type: PERCENTAGE
   };
 }
 
-export const setOperator = ( operator ) => {
+export const setOperator = operator => {
 	return {
-    operator: operator,
-    type: "SET_OPERATOR"
+    type: SET_OPERATOR,
+		operator
   };
 }
 
 export const toggleNegative = () => {
 	return {
-    type: "TOGGLE_NEGATIVE"
+    type: TOGGLE_NEGATIVE
   };
 }
