@@ -10,7 +10,7 @@ import { operators } from './components/constants';
 
 export class App extends Component {
   render() {
-    const {output, enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+    const {output, total, enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
 		} = this.props;
 
 		const numberButtons789 = [ 7, 8, 9].map( ( number ) => (
@@ -53,7 +53,7 @@ export class App extends Component {
         <fieldset className="App-intro">
           <legend>CALCULATOR</legend>
           <OutputDisplay
-            output={ output }
+            output={ total? total: output }
           />
 					<div className = "buttons" >
 						<div className = "row" >

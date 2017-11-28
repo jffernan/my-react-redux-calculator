@@ -11,7 +11,8 @@ import {
 const initialState = {
   output: '0',
   operator: null,
-  previousValue: 0
+  previousValue: 0,
+	total: null
 };
 
 export const calculate = ( output, previousValue, operator ) => {
@@ -34,32 +35,42 @@ const mainReducer = (state = initialState, action) => {
     case ENTER_NUMBER:
     return {
       ...state,
-      output: state.output === "0" ? action.number.toString() : `${ state.output }${ action.number }`
+			total: state.operator && state.output !=="0"?
+			  `${ state.output }${ action.number }`:
+				 null,
+      output: state.output === "0" ?
+				action.number.toString():
+				`${ state.output }${ action.number }`
     };
 
     case SET_OPERATOR:
       return {
         output: "0",
+				total: `${ state.output }`,
         operator: action.operator,
-        previousValue: state.operator ? calculate( parseFloat( state.output ), state.previousValue, state.operator ) : parseFloat( state.output )
+        previousValue: state.operator ?
+					calculate( parseFloat( state.output ), state.previousValue, state.operator ):
+					parseFloat( state.output )
       };
 
     case PERCENTAGE:
       return {
         ...state,
-        output: ( parseFloat( state.output ) / 100 ).toString()
+        output: parseFloat( parseFloat( state.output ) / 100 ).toString()
       };
 
     case CLEAR:
       return {
         output: "0",
         operator: null,
-        previousValue: 0
+        previousValue: 0,
+				total: null
       };
 
     case EVALUATE:
       return {
-        output: calculate( parseFloat( state.output ), state.previousValue, state.operator ).toString(),
+				output: "0",
+        total: calculate( parseFloat( state.output ), state.previousValue, state.operator ).toString(),
         operator: null,
         previousValue: 0
       };
