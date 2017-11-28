@@ -59,7 +59,7 @@ export class App extends Component {
 						<div className = "row" >
 							<Button
 								callback={ clear }
-								value="clear"
+								value="A/C"
 							/>
 							<Button
 								callback={ toggleNegative }
@@ -106,8 +106,8 @@ export class App extends Component {
 								value="="
 							/>
 							<Button
-								callback={ evaluate }
-								value="enter"
+								callback={ () => enterNumber( total? total: '' ) }
+								value="SAVE"
 							/>
 							</div>
 					</div>
