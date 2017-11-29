@@ -1,6 +1,6 @@
 # my-react-redux-calculator
 
-Welcome to My React Redux Calculator SPA, where you can perform basic math operations in the UI.
+Welcome to My React Redux Calculator SPA, where you can perform basic math operations by clicking the buttons of the calculator in the UI.
 
 Live demo at: https://jffernan.github.io/my-react-redux-calculator/
 

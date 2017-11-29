@@ -48,10 +48,10 @@ export class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to My React Redux Calculator</h1>
+          <h1 className="App-title">Welcome to My React Redux Calculator App</h1>
         </header>
         <fieldset className="App-intro">
-          <legend>CALCULATOR</legend>
+          <legend>'CLICKABLE' CALCULATOR</legend>
           <OutputDisplay
             output={ total? total: output }
           />
