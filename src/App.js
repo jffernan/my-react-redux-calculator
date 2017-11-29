@@ -112,6 +112,15 @@ export class App extends Component {
 							</div>
 					</div>
         </fieldset>
+				<footer className="App-footer">
+          <h1 className="App-code">
+						<a target="_blank"
+							rel="noopener noreferrer"
+							href="https://github.com/jffernan/my-react-redux-calculator">
+	  					Visit GitHub To View My Code
+						</a>
+					</h1>
+        </footer>
       </div>
     );
   }
