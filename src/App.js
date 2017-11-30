@@ -4,13 +4,13 @@ import Button from './components/Button';
 import OutputDisplay from './components/OutputDisplay';
 import { connect } from 'react-redux';
 import {
-	  enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+	  enterNumber, setOperator, percentage, clear, equals, toggleNegative
 } from './components/actions';
 import { operators } from './components/constants';
 
 export class App extends Component {
   render() {
-    const {output, total, enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+    const {output, total, enterNumber, setOperator, percentage, clear, equals, toggleNegative
 		} = this.props;
 
 		const numberButtons789 = [ 7, 8, 9].map( ( number ) => (
@@ -102,7 +102,7 @@ export class App extends Component {
 								value="."
 							/>
 							<Button
-								callback={ evaluate }
+								callback={ equals }
 								value="="
 							/>
 							<Button
@@ -131,5 +131,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-	enterNumber, setOperator, percentage, clear, evaluate, toggleNegative
+	enterNumber, setOperator, percentage, clear, equals, toggleNegative
 })(App);

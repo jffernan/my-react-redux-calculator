@@ -2,7 +2,7 @@ import {operators} from './constants.js';
 import {
 	CLEAR,
 	ENTER_NUMBER,
-	EVALUATE,
+	EQUALS,
 	PERCENTAGE,
 	SET_OPERATOR,
 	TOGGLE_NEGATIVE
@@ -67,7 +67,7 @@ const mainReducer = (state = initialState, action) => {
 				total: null
       };
 
-    case EVALUATE:
+    case EQUALS:
       return {
 				output: "0",
         total: calculate( parseFloat( state.output ), state.previousValue, state.operator ).toString(),

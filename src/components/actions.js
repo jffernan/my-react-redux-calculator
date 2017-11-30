@@ -1,7 +1,7 @@
 import {
 	CLEAR,
 	ENTER_NUMBER,
-	EVALUATE,
+	EQUALS,
 	PERCENTAGE,
 	SET_OPERATOR,
 	TOGGLE_NEGATIVE
@@ -20,9 +20,9 @@ export const enterNumber = number => {
   };
 }
 
-export const evaluate = () => {
+export const equals = () => {
 	return {
-    type: EVALUATE
+    type: EQUALS
   };
 }
 
