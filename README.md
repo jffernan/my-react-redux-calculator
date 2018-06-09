@@ -2,7 +2,7 @@
 
 Welcome to My React Redux Calculator SPA, where you can perform basic math operations by clicking the buttons of the calculator in the UI.
 
-Live demo at: https://jffernan.github.io/my-react-redux-calculator/
+Live demo at: https://jffernan.github.io/my-react-redux-calculator/  [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/jffernan/demo-react-redux-calculator)
 
 The app was created with create-react-app.  See the [full create-react-app guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).  Thank you for using my app.
 
